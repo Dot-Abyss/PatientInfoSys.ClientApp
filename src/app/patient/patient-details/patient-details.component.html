@@ -1,0 +1,215 @@
+<ng-template #content let-c="close">
+    <div class="modal-header">
+        <h4 class="modal-title">Patient {{patient.name}}</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="c('Cross click')"></button>
+    </div>
+    <div id="patientData" class="modal-body data">
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                ID
+            </dt>
+            <dd class="col-sm-8 col-8 ">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">🔑</span>
+                    <input type="text" class="form-control" [value]="patient.id" aria-label="ID" aria-describedby="basic-addon1">
+                </div>               
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                Name
+            </dt>
+            <dd class="col-sm-6 col-6 ">
+                {{patient.name}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                fileNo
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.fileNo}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                citizenId
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.citizenId}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                birthdate
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.birthDate|date}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                gender
+            </dt>
+            <dd class="col-sm-6 col-6" *ngIf="patient.gender==0">
+                Male
+            </dd>
+            <dd class="col-sm-6 col-6" *ngIf="patient.gender==1">
+                Female
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                natinality
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.natinality}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                phoneNumber
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.phoneNumber}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                email
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.email}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                country
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.country}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                city
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.city}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                street
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.street}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                address1
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.address1}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                address2
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.address2}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                contactPerson
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.contactPerson}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                contactRelation
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.contactRelation}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                contactPhone
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.contactPhone}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                firstVisitDate
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.firstVisitDate|date}}
+            </dd>
+
+        </dl>
+        <dl class="row">
+
+            <dt class="col-sm-4 col-4">
+                recordCreationDate
+            </dt>
+            <dd class="col-sm-6 col-6">
+                {{patient.recordCreationDate |date}}
+            </dd>
+
+        </dl>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button>
+    </div>
+</ng-template>
+
+<button type="button" class="btn btn-light border border-2" (click)="open(content)">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+      width="24" height="24"
+      viewBox="0 0 24 24"
+      style=" fill:#27b7de;"><path d="M19,20c0,0.6-0.4,1-1,1H6c-0.6,0-1-0.4-1-1V4c0-0.6,0.4-1,1-1h7.6L19,8.4V20z" opacity=".3"></path><path d="M8 12H16V14H8zM8 16H16V18H8z"></path><path d="M18,22H6c-1.1,0-2-0.9-2-2V4c0-1.1,0.9-2,2-2h8l6,6v12C20,21.1,19.1,22,18,22z M6,4v16h12V8.8L13.2,4H6z"></path><path d="M18.5 9L13 9 13 3.5z"></path>
+    </svg>
+</button>
